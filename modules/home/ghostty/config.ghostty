@@ -1,0 +1,23 @@
+# Shell
+command = /run/current-system/sw/bin/fish
+
+# Font
+font-family = Cousine Nerd Font Mono
+font-size = 14
+
+# Colore di sfondo
+background = 0A0A0A
+
+# Trasparenza
+background-opacity = 0.95
+
+# Padding
+window-padding-x = 32
+window-padding-y = 0
+
+# Tab
+keybind = ctrl+shift+z=new_tab
+keybind = ctrl+shift+x=close_tab
+
+# ssh fix
+term = xterm-256color
