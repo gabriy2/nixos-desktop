@@ -35,6 +35,16 @@
   services.displayManager.dms-greeter = {
     enable = true;
     compositor.name = "hyprland";
+    compositor.customConfig = ''
+      env = XCURSOR_THEME,Bibata-Modern-Classic
+      env = XCURSOR_SIZE,24
+      env = HYPRCURSOR_THEME,Bibata-Modern-Classic
+      env = HYPRCURSOR_SIZE,24
+      misc {
+        force_default_wallpaper = 0
+        disable_hyprland_logo = true
+      }
+    '';
     configHome = "/home/pego";
   };
 

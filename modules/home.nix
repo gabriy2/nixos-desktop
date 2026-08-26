@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 {
   # ----------------------------
   # ------- HOME-MANAGER -------
@@ -54,6 +54,38 @@
       user.email = "120041541+gabriy2@users.noreply.github.com";
       init.defaultBranch = "main";
       advice.defaultBranchName = false;
+    };
+  };
+
+  # -----------------------
+  # ------- FLATPAK -------
+  # -----------------------
+
+  home.activation.flatpakGlobalOverride = lib.hm.dag.entryAfter ["writeBoundary"] ''
+    ${pkgs.flatpak}/bin/flatpak override --user \
+      --env=GTK_THEME=Adwaita-dark \
+      --env=ICON_THEME=Adwaita \
+      --env=XCURSOR_THEME=Bibata-Modern-Classic \
+      --env=XCURSOR_SIZE=24 \
+      --env=NIXOS_OZONE_WL=1 \
+      --filesystem=/nix/store:ro
+  '';
+
+
+
+  # --------------------------
+  # ------ ICON & THEME ------
+  # --------------------------
+
+  gtk = {
+    enable = true;
+    iconTheme = {
+      name = "Adwaita";
+      package = pkgs.adwaita-icon-theme;
+    };
+    theme = {
+      name = "Adwaita-dark";          # o "Adwaita"
+      package = pkgs.gnome-themes-extra;
     };
   };
 }

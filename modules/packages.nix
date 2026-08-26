@@ -18,6 +18,7 @@
     hyprshot
     nautilus
     vscodium
+    bibata-cursors
   ];
 
 
