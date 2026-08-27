@@ -15,8 +15,8 @@ hl.monitor({
 ---- MY PROGRAMS ----
 ---------------------
 
---- local terminal    = "GTK_IM_MODULE=simple ghostty"
-local terminal    = "ghostty"
+local terminal    = "GTK_IM_MODULE=simple ghostty"
+--- local terminal    = "ghostty"
 local fileManager = "nautilus"
 local browser     = "app.zen_browser.zen"
 local launcher    = "dms ipc call spotlight toggle"
